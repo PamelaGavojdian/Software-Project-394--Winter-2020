@@ -2,14 +2,16 @@
 
 ## Requirements
 Install flask
+Install requests
+Install json
 
-pip3 install flask
-pip install flask
 
 (Depending on your python version)
 ##run
 
 ```flask hello.py```
+```python hello.py```
+```python3 hello.py```
 
 ##Resources
 https://scotch.io/bar-talk/processing-incoming-request-data-in-flask
