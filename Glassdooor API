@@ -1,0 +1,7 @@
+http://api.glassdoor.com/api/api.htm?v=1 //version 1
+format=json  
+t.p=120   //partner ID 
+t.k=fz6JLNDfgVs //Partner Key 
+action=employers  //particular API call that you would like to make- see jobs, reviews, slaries etc.
+q=pharmaceuticals
+userip=192.168.43.42 //IP address of the end user to whom the API results will be shown
