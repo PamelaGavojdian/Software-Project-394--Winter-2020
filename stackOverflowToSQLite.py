@@ -2,6 +2,7 @@ import urllib.parse
 import requests
 import xmltodict
 import sqlite3
+from bs4 import BeautifulSoup
 
 def createUrl(city, range, salary=None, unit='Miles'):
     baseURL= """https://stackoverflow.com/jobs/feed"""
@@ -41,11 +42,13 @@ def SQLiteFromDict(inputDict, city):
     formattedCity = city.split(',')[0].replace(' ', '_')
 
     tableName = "jobs_in_" + formattedCity
-    c.execute('''CREATE TABLE IF NOT EXISTS {} (title text, link text)'''.format(tableName))
+    c.execute('''CREATE TABLE IF NOT EXISTS {} (title text, link text, description text)'''.format(tableName))
 
     for listing in inputDict:
 
-        execStr = '''INSERT INTO {} VALUES ("{}", "{}")'''.format(tableName, listing['title'], listing['link'])
+        cleanDescription = BeautifulSoup(listing['description'], "lxml").text.replace('"','“') # SQLite doesn't like quotations in the statement, so replace them with fancy quotations
+        print(cleanDescription)
+        execStr = '''INSERT INTO {} VALUES ("{}", "{}", "{}")'''.format(tableName, listing['title'], listing['link'], cleanDescription)
 
         c.execute(execStr)
 
@@ -62,4 +65,4 @@ def createTableforCity(city, radius):
 
 
 for city in ["Chicago, IL, USA", "Los Angeles, IL, USA", "New York, NY, USA"]:
-    createTableforCity(city, 20)
+    createTableforCity(city, 50)
