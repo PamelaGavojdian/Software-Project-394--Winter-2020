@@ -48,7 +48,27 @@
         <div class="autocomplete" style="width:500px">
   <label for="myInput">Desired Career Field: </label><input type="text" id="myInput" name="myCountry" placeholder="Job Title, Keywords or Company:"><br><br>
   <label for="lname">Desired Location: </label><input type="text" id="lname" name="lname" placeholder="City, State or Zip Code"><br><br>
-            
+  
+ <form action="/action_page.php">
+  <label for="rang">Distance Radius:</label>
+  <input type="range" list="miles" min="0" max="100">
+    <datalist id = "tickmarks">
+    <option value= "0"></option>
+    <option value="10"></option>
+    <option value="20"></option>
+    <option value="30"></option>
+    <option value="40"></option>
+    <option value="50"></option>
+    <option value="60"></option>
+    <option value="70"></option>
+    <option value="80"></option>
+    <option value="90"></option>
+    <option value="100"></option>
+  </datalist>
+
+</form>
+</select><br><br>            
+                     
 <label for="Job Type">Job Type:</label>
 <select id="JobType">
   <option value="partTime">Part-Time</option>
