@@ -12,9 +12,9 @@ class Job:
 
         ## JobType status
         self.fullTime = True 
-        self.partTime = True
-        self.contract = True
-        self.internship = True
+        self.partTime = False
+        self.contract = False
+        self.internship = False
 
 
     #Modify Experience level Attributes
@@ -26,6 +26,7 @@ class Job:
 
     def flipSeniorLevel(self):
     	self.seniorLevel = not self.seniorLevel
+
 
 
     #modify JobType Status
@@ -40,6 +41,29 @@ class Job:
     
     def flipInternship(self):
     	self.internship = not self.internship
+
+    def isEntryLevel(self):
+        if 'associate' in self.position.lower() or 'analyst' in self.position.lower():
+            self.flipMidlevel()
+            self.flipSeniorLevel()
+
+    def isMidLevel(self):
+        if 'associate' in self.position.lower() or 'analyst' in self.position.lower():
+            self.flipEntryLevel()
+            self.flipSeniorLevel()
+
+    def isSrLevel(self):
+        if 'senior' in self.position.lower() or 'lead' in self.position.lower() or 'sr' in self.position.lower() or 'director' in self.position.lower():
+            self.flipMidlevel()
+            self.flipEntryLevel()
+
+    def isInternship(self):
+        if 'internship' in self.position.lower() or 'intern' in self.position.lower():
+            self.flipMidlevel()
+            self.flipSeniorLevel()
+            self.flipInternship()
+            self.flipFullTime()
+
 
 
 
