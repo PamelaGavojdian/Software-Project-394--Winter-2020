@@ -60,3 +60,16 @@ input[type=submit] {
   color: #ffffff;
 }
 
+.containMapNScroll {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 10px;
+  background-color: #2196F3;
+  padding: 100px;
+}
+.containMapNScroll > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
