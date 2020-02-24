@@ -14,7 +14,7 @@ def returnJson():
 	return json.dumps([1, 2, 3, {'4': 5, '6': 7}])
 
 if __name__ == "__main__":
-	#app.run()
+	app.run()
 
 
 ##Job Is a callable Object now
