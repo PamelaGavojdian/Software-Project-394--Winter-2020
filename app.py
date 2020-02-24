@@ -1,5 +1,5 @@
 from flask import Flask
-from custom.objects.Job import Job
+from flask import render_template
 import json
 
 
