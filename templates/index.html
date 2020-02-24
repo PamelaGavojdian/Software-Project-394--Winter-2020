@@ -6,8 +6,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>GETTING STARTED WITH BRACKETS</title>
         <meta name="description" content="An interactive getting started guide for Brackets.">
-	<!--<link rel="stylesheet" href="main.css">-->
-	<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/main.css') }}">
+        <link rel="stylesheet" href="main.css">
         <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Lemonada|Pacifico&display=swap" rel="stylesheet">
     </head>
     <body>
@@ -98,7 +97,14 @@
         
         <h1>Here is a Mapping of Your Job Options</h1>
 
-<div id="googleMap" style="width:100%;height:400px;"></div>
+<div class="containMapNScroll">
+    
+<div id="googleMap" style="width:50%;height:400px;">
+    </div>
+    
+  <div class="item2"></div>
+    
+        </div>
 
 <script>
 function myMap() {
@@ -114,3 +120,4 @@ var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
 
     </body>
 </html>
+
