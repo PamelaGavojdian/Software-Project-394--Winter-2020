@@ -6,7 +6,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>GETTING STARTED WITH BRACKETS</title>
         <meta name="description" content="An interactive getting started guide for Brackets.">
-        <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/main.css') }}">
         <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Lemonada|Pacifico&display=swap" rel="stylesheet">
     </head>
     <body>
@@ -99,12 +99,17 @@
 
 <div class="containMapNScroll">
     
-<div id="googleMap" style="width:50%;height:400px;">
-    </div>
-    
-  <div class="item2"></div>
-    
-        </div>
+
+
+
+<div class="container">
+  <div class="fixed" id="googleMap"></div>
+  <div class="flex-item">
+    {% block jobList %}
+    {% endblock %}
+  </div>
+</div>
+
 
 <script>
 function myMap() {
