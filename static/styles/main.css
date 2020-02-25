@@ -60,6 +60,19 @@ input[type=submit] {
   color: #ffffff;
 }
 
+<<<<<<< HEAD
+.container{
+  display: flex;
+  height: 100vh;
+}
+.fixed{
+  width: 50%;
+}
+.flex-item{
+  flex-grow: 1;
+  overflow-y: scroll;
+}
+=======
 .containMapNScroll {
   display: grid;
   grid-template-columns: auto auto auto auto;
@@ -73,3 +86,4 @@ input[type=submit] {
   padding: 20px 0;
   font-size: 30px;
 }
+>>>>>>> cd3075400acf5681b953a1d7a1826be607012df5
