@@ -6,7 +6,19 @@ import json
 import sqlite3
 from custom.databaseConnection.stackOverflowToSQLite import *
 
+# GOOGLE_MAPS_API_KEY = None
+
+
 app = Flask(__name__)
+
+def loadAPIKey():
+	with open('API_KEY.txt', 'r') as txtFile:
+		data = txtFile.read()
+		if not data:
+			print('No Google API key was provided, the map will not work correctly')
+			return None
+		else:
+			return data
 
 
 def checkForDB():
@@ -49,10 +61,12 @@ def hello():
 	else:
 		query = buildQuery(location, distance=distance, search=search)
 		jobsList = getDBResult(query, location)
-		return render_template("jobList.html", jobs = jobsList)
+		return render_template("jobList.html", jobs = jobsList, apikey = GOOGLE_MAPS_API_KEY)
 
 
 if __name__ == "__main__":
+	global GOOGLE_MAPS_API_KEY
+	GOOGLE_MAPS_API_KEY = loadAPIKey()
 	checkForDB()
 	app.run()
 
