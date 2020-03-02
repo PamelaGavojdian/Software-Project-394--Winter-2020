@@ -33,7 +33,7 @@ def checkForDB():
 
 
 def buildQuery(location, distance=50, search=''):
-	query = """select * from jobs_in_{} where distance < {}""".format(location, distance)
+	query = """select * from jobs_in_{} where distance <= {}""".format(location, distance)
 	if search:
 		query += ''' and title like '%{}%' '''.format(search)
 
@@ -65,7 +65,7 @@ def hello():
 	else:
 		query = buildQuery(location, distance=distance, search=search)
 		jobsList = getDBResult(query, location)
-		return render_template("jobList.html", jobs = jobsList, apikey = GOOGLE_MAPS_API_KEY, coords = latLongDict[location])
+		return render_template("jobList.html", jobs = jobsList, apikey = GOOGLE_MAPS_API_KEY, coords = latLongDict[location], circleRadiusInMeters = int(int(distance) * 1609.344))
 
 
 if __name__ == "__main__":
