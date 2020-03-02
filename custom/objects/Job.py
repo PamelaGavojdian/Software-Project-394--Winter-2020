@@ -1,5 +1,5 @@
 class Job:
-    def __init__(self, position="", salary = 0 , location="Chicago", url=None):
+    def __init__(self, position="", salary = 0 , location="Chicago", url=None, distance=None):
 
         if location == "Chicago":
             self.salary = "$75,650"
@@ -26,7 +26,7 @@ class Job:
 
 
         self.url = url
-
+        self.distance = distance
 
     #Modify Experience level Attributes
     def flipEntryLevel(self):

@@ -30,9 +30,8 @@ def getDBResult(query, location):
 		for row in c.execute(query):
 			tempArray.append(Job(position=row[0],
 								 location=location,
-								 url = row[1]
-								 )
-							)			
+								 url = row[1],
+								 distance = row[3]))			
 		return tempArray
 
 
@@ -69,6 +68,8 @@ def hello():
 	location = request.args.get("Location")
 	search = request.args.get("Search")
 	distance = request.args.get("Distance")
+	if not distance:
+		distance = 50
 
 	if not location:
 		return render_template("jobList.html", jobs = list())
