@@ -8,6 +8,10 @@ from custom.databaseConnection.stackOverflowToSQLite import *
 
 # GOOGLE_MAPS_API_KEY = None
 
+latLongDict = {"Chicago": '41.881832, -87.623177',
+			   "Los_Angeles": '34.052235, -118.243683',
+			   "New_York": '40.730610, -73.935242'}
+
 
 app = Flask(__name__)
 
@@ -61,7 +65,7 @@ def hello():
 	else:
 		query = buildQuery(location, distance=distance, search=search)
 		jobsList = getDBResult(query, location)
-		return render_template("jobList.html", jobs = jobsList, apikey = GOOGLE_MAPS_API_KEY)
+		return render_template("jobList.html", jobs = jobsList, apikey = GOOGLE_MAPS_API_KEY, coords = latLongDict[location])
 
 
 if __name__ == "__main__":
