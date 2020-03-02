@@ -16,7 +16,7 @@ def checkForDB():
 		getAllJobs()
 
 
-def buildQuery(location, distance=100, search=''):
+def buildQuery(location, distance=50, search=''):
 	query = """select * from jobs_in_{} where distance < {}""".format(location, distance)
 	if search:
 		query += ''' and title like '%{}%' '''.format(search)
