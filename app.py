@@ -5,6 +5,7 @@ from custom.objects.Job import Job
 import json
 import sqlite3
 from custom.databaseConnection.stackOverflowToSQLite import *
+import webbrowser
 
 # GOOGLE_MAPS_API_KEY = None
 
@@ -19,7 +20,9 @@ def loadAPIKey():
 	with open('API_KEY.txt', 'r') as txtFile:
 		data = txtFile.read()
 		if not data:
-			print('No Google API key was provided, the map will not work correctly')
+			print()
+			print('WARNING: No Google API key was provided, the map will not work correctly')
+			print()
 			return None
 		else:
 			return data
@@ -72,6 +75,8 @@ if __name__ == "__main__":
 	global GOOGLE_MAPS_API_KEY
 	GOOGLE_MAPS_API_KEY = loadAPIKey()
 	checkForDB()
+	webbrowser.open('localhost:5000')
 	app.run()
+
 
 ##Job Is a callable Object now
