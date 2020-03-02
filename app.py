@@ -37,33 +37,6 @@ def getDBResult(query, location):
 
 @app.route("/")
 def hello():
-
-	testJobList = [
-		Job(position="Test1", salary = 100 , location="Chicago"),
-		Job(position="Test2", salary = 200 , location="Chicago"), 
-		Job(position="Test3", salary = 300 , location="Chicago"),
-		Job(position="Test1", salary = 100 , location="Chicago"),
-		Job(position="Test2", salary = 200 , location="Chicago"), 
-		Job(position="Test3", salary = 300 , location="Chicago"),
-		Job(position="Test1", salary = 100 , location="Chicago"),
-		Job(position="Test2", salary = 200 , location="Chicago"), 
-		Job(position="Test3", salary = 300 , location="Chicago"),
-		Job(position="Test1", salary = 100 , location="Chicago"),
-		Job(position="Test2", salary = 200 , location="Chicago"), 
-		Job(position="Test3", salary = 300 , location="Chicago"),
-		Job(position="Test1", salary = 100 , location="Chicago"),
-		Job(position="Test2", salary = 200 , location="Chicago"), 
-		Job(position="Test3", salary = 300 , location="Chicago"),
-		Job(position="Test1", salary = 100 , location="Chicago"),
-		Job(position="Test2", salary = 200 , location="Chicago"), 
-		Job(position="Test3", salary = 300 , location="Chicago"),
-		Job(position="Test1", salary = 100 , location="Chicago"),
-		Job(position="Test2", salary = 200 , location="Chicago"), 
-		Job(position="Test3", salary = 300 , location="Chicago"),
-		Job(position="Test1", salary = 100 , location="Chicago"),
-		Job(position="Test2", salary = 200 , location="Chicago"), 
-		Job(position="Test3", salary = 300 , location="Chicago")
-		]
 	
 	location = request.args.get("Location")
 	search = request.args.get("Search")
