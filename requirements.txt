@@ -3,3 +3,4 @@ tqdm
 flask
 xmltodict
 bs4
+lxml
