@@ -1,8 +1,16 @@
 class Job:
-    def __init__(self, position="", salary = 0 , location="Chicago"):
+    def __init__(self, position="", salary = 0 , location="Chicago", url=None):
+
+        if location == "Chicago":
+            self.salary = "$75,650"
+        elif location == "New_York":
+            self.salary = "$88,648"
+        elif location == "Los_Angeles":
+            self.salary = "$82,117"
+
         self.position = position
         self.location = location
-        self.salary = salary
+        # self.salary = salary
 
         ## Experience Level Attributes
         self.entryLevel = True
@@ -15,6 +23,9 @@ class Job:
         self.partTime = False
         self.contract = False
         self.internship = False
+
+
+        self.url = url
 
 
     #Modify Experience level Attributes
