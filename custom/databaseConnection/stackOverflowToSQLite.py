@@ -65,7 +65,7 @@ def createTableforCity(city, radius):
     SQLiteFromDict(jobDict, city, radius)
 
 def getAllJobs():
-    for city in ["Chicago, IL, USA", "Los Angeles, IL, USA", "New York, NY, USA"]:
+    for city in ["Chicago, IL, USA", "Los Angeles, CA, USA", "New York, NY, USA"]:
         print("city:", city)
         for dist in tqdm(range(1, 50 + 1)):
             createTableforCity(city, dist)
