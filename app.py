@@ -78,5 +78,6 @@ if __name__ == "__main__":
 	webbrowser.open('http://localhost:5000')
 	app.run()
 
+	
 
 ##Job Is a callable Object now
