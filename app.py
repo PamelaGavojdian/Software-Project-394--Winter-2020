@@ -75,7 +75,7 @@ if __name__ == "__main__":
 	global GOOGLE_MAPS_API_KEY
 	GOOGLE_MAPS_API_KEY = loadAPIKey()
 	checkForDB()
-	webbrowser.open('localhost:5000')
+	webbrowser.open('http://localhost:5000')
 	app.run()
 
 
